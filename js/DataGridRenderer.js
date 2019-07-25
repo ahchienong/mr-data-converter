@@ -675,10 +675,19 @@ var DataGridRenderer = {
     if (headerNames[0] != "val0") {
       outputText += indent+"|";
       for (var j=0; j < numColumns; j++) {
-        outputText += "_." + headerNames[j];
+        outputText += headerNames[j];
         if (j < (numColumns-1)) {outputText+=" |"};
       };
       outputText += " |" + newLine;
+      
+      //add header separator
+      outputText += indent+"|";
+      for (var j=0; j < numColumns; j++) {
+        outputText += '---';
+        if (j < (numColumns-1)) {outputText+=" |"};
+      };      
+      outputText += " |" + newLine;
+      
     };
     
     //begin render loop
